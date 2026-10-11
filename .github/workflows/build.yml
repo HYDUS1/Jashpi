@@ -9,11 +9,12 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-    - uses: gradle/actions/setup-gradle@v3
-    - name: Generate Gradle Wrapper
-      run: gradle wrapper
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v3
+      with:
+        gradle-version: 8.2
     - name: Build APK
-      run: ./gradlew assembleDebug
+      run: gradle assembleDebug
     - uses: actions/upload-artifact@v4
       with:
         name: Jashpi-APK
