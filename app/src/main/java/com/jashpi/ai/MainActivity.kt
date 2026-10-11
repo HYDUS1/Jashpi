@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme(colorScheme = lightColorScheme(primary = Color(0xFF5E5CE6))) {
-                var selectedTab by remember { mutableIntStateOf(0) }
+                var selectedTab by remember { mutableStateOf(0) }
                 val tabs = listOf("Chat", "Discover", "Library", "Settings")
 
                 Scaffold(
